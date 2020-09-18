@@ -1,16 +1,23 @@
 package com.unisinos.as.ArquiteturaJPA.entity;
 
+import java.util.Date;
+
 public class Pessoa {
 	private int id;
 	private String nome;
 	private String localizacao;
 	private Date data_nasc;
+	
+	public Pessoa() {
+		
+	}
+	
 	public Pessoa(int id, String nm, String loc, Date dn) {
 		super();
-		this->id = id;
-		this->nome = nm;
-		this->localizacao = loc;
-		this->data_nasc = dn;
+		this.id = id;
+		this.nome = nm;
+		this.localizacao = loc;
+		this.data_nasc = dn;
 		
 	}
 	public int getId() {
@@ -37,4 +44,11 @@ public class Pessoa {
 	public void setData_nasc(Date data_nasc) {
 		this.data_nasc = data_nasc;
 	}
+
+	@Override
+	public String toString() {
+		return "\n Pessoa [id=" + id + ", nome=" + nome + ", localizacao=" + localizacao + ", data_nasc=" + data_nasc
+				+ "]";
+	}
+	
 }

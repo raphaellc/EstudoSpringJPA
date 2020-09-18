@@ -16,7 +16,16 @@ public class PessoaJdbcDao {
 	JdbcTemplate jdbcTemplate;
 	//select * from pessoa
 	public List<Pessoa> buscaTodos(){
-		jdbcTemplate.query("select * from person", 
-				new BeanPropertyRowMapper(Pessoa.class));
+		return jdbcTemplate.query("select * from Pessoa", 
+				new BeanPropertyRowMapper<Pessoa>(Pessoa.class));
+	}
+	public Pessoa buscaPorId(int id){
+		return jdbcTemplate.queryForObject("select * from Pessoa where id=?",
+				new Object[] {id}, 
+				new BeanPropertyRowMapper<Pessoa>(Pessoa.class));
+	}
+	public int deletaPorId(int id){
+		return jdbcTemplate.update("delete from Pessoa where id=?",
+				new Object[] {id});
 	}
 }
