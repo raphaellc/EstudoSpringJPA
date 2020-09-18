@@ -14,7 +14,9 @@ public class PessoaJdbcDao {
 
 	@Autowired
 	JdbcTemplate jdbcTemplate;
-	//select * from pessoa
+	
+	
+	
 	public List<Pessoa> buscaTodos(){
 		return jdbcTemplate.query("select * from Pessoa", 
 				new BeanPropertyRowMapper<Pessoa>(Pessoa.class));

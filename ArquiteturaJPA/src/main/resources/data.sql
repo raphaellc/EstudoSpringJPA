@@ -1,4 +1,4 @@
-create table Pessoa
+/*create table Pessoa
 (
    id integer not null,
    nome varchar(255) not null,
@@ -6,7 +6,7 @@ create table Pessoa
    data_nasc timestamp,
    primary key(id)
 );
-
+*/
 INSERT INTO Pessoa (ID, NOME, LOCALIZACAO, DATA_NASC) 
 VALUES(10001,  'Raphael', 'Porto Alegre',sysdate());
 INSERT INTO Pessoa (ID, NOME, LOCALIZACAO, DATA_NASC) 
